@@ -4,7 +4,8 @@ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 export PATH=`pwd`/depot_tools:"$PATH"
 fetch --no-history v8
 cd v8
-gclient sync -r 6.9.427.6  # 55da769bafac8b531cd8b388df56161b8b7c6416
+#gclient sync -r 6.9.427.6  # 55da769bafac8b531cd8b388df56161b8b7c6416
+gclient sync -r 7.1.69     # 
 
 # old version
 #git checkout 5.5.372.7
@@ -22,9 +23,10 @@ fi
 #make v8 v8_libplatform -C out BUILDTYPE=Release -j8 builddir=$(pwd)/out/Release
 
 # NEW
+# ./build/install-build-deps.sh
 ./tools/dev/gm.py x64.release
 
-mkdir -p lib
+#mkdir -p lib
 #cp out/Release/lib.target/*.so lib
 #cp out/Release/lib* lib
 #cp out/x64.release/obj/*.a lib
