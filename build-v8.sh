@@ -32,7 +32,7 @@ gclient sync -r 6.9.427.13  # https://ci.appveyor.com/project/pmed/v8pp
 ./tools/dev/gm.py x64.release
 
 # workaround, see notes.txt
-echo "v8_enable_embedded_builtins = false" >> cat out/x64.release/args.gn
+echo "v8_enable_embedded_builtins = false" | tee -a out/x64.release/args.gn
 ./tools/dev/gm.py x64.release
 
 #mkdir -p lib
